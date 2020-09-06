@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  database:
+    hostname: database
+    image: postgres:12.2
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=superadmin
+      - POSTGRES_PASSWORD=d@t@3ncrypt3d
+    volumes:
+      - '/postgresql-data'
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U root"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
