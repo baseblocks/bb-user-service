@@ -1,0 +1,25 @@
+server.port: ${PORT:8080}
+server:
+  servlet:
+    contextPath: /api
+
+spring:
+  application:
+    name: bb-user-service
+  jpa:
+    generate-ddl: true
+    hibernate.ddl-auto: create #validate #update
+    properties:
+      hibernate:
+        jdbc:
+          lob.non_contextual_creation: true
+          time_zone: UTC
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: superadmin
+    password: d@t@3ncrypt3d
+    initialization-mode: always
+    hikari.maximum-pool-size: ${hikari-maximum-pool-size:5}
+
+encryption:
+  key: simpleKey
