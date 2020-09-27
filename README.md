@@ -10,3 +10,12 @@ How to`s project
 ## Tech solution
 There are different ways how to implement this. We will focus on one specific now. 
 Hibernate converters are going to be used for the solution.
+
+# How-to #2. Audit trail using envers
+## Requirements
+1. Changes in tables are tracked automatically whenever we call save, update or delete operations on our repository level;
+2. Ability to easily query audit trail.
+
+## Tech solution
+Spring Data has the mechanism called Spring Data Envers which allow access to entity revisions managed by Hibernate Envers. 
+It will automatically write entities snapshots of the User entity on the update, save and delete operation into separate table(user_history in our case).

@@ -2,6 +2,7 @@ package tech.baseblocks.dataencryption.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.hibernate.envers.Audited;
 import tech.baseblocks.dataencryption.repository.attributeconverter.StringAttributeConverter;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Data
 @Table(name = "bb_user")
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Audited
 public class User {
 
     @Id
